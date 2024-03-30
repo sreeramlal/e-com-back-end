@@ -1,7 +1,9 @@
 require('dotenv').config();
 const express = require('express');
+const config = require('./config/dbConfig')
 const app = express();
 
+config.connect();
 app.get('/health',(req,res) =>{
     res.json({message:'server up and running'})
 });
